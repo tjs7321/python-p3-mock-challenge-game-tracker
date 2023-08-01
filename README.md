@@ -103,7 +103,7 @@ build out any helper methods if needed.
 #### Result
 
 - `Result property player`
-  - Returns the player for the Result
+  - Returns the player instance which the given Result instance belongs to
   - Players must be `Player` instances
   - `raise Exception` if setter fails
 - `Result property game`
@@ -114,25 +114,18 @@ build out any helper methods if needed.
 #### Player
 
 - `Player results(self, new_result=None)`
-  - Adds new results to instance attribute `player._results` if `new_result`
-    exists.
   - Returns a list of `Result` instances associated with the `Player` instance.
-  - _You will need to call this method in `Result.__init__()`._
+  - You should derive this list from a Single Source of Truth
 - `Player games_played(self)`
   - Returns a list of `Game` instances played by the `Player` instance.
 
 #### Game
 
 - `Game results(self, new_result=None)`
-  - Adds new results to instance attribute `game._results` if `new_result`
-    exists.
   - Returns a list of `Result` instances associated with the `Game` instance.
-  - _You will need to call this method in `Result.__init__()`._
+  - You should derive this list from a Single Source of Truth
 - `Game players(self, new_player=None)`
-  - Adds new results to instance attribute `player._results` if `new_result`
-    exists.
-  - Returns a list of `Result` instances associated with the `Player` instance.
-  - _You will need to call this method in `Result.__init__()`._
+  - Returns a list of `Player` instances who played the specified `Game`.
 
 ### Aggregate and Association Methods
 
@@ -156,7 +149,7 @@ build out any helper methods if needed.
 #### Bonus: Aggregate and Association Method
 
 - `Player classmethod highest_scored(cls, game)`
-  - Returns the `Player` instance with the highest average game score.
+  - Returns the `Player` instance with the highest average score for a given game.
   - Returns `None` if there are no players.
   - _hint: will need a way to remember all `Player` objects_
   - _hint: do you have a method to get the average score on a game for a
