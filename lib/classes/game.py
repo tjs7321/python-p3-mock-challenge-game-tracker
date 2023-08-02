@@ -5,10 +5,10 @@ class Game:
     def __init__(self, title):
         self.title = title
 
-    def results(self, new_result=None):
+    def results(self):
         pass
 
-    def players(self, new_player=None):
+    def players(self):
         pass
 
     def average_score(self, player):

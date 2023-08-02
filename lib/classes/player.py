@@ -7,10 +7,10 @@ class Player:
     def __init__(self, username):
         self.username = username
 
-    def results(self, new_result=None):
+    def results(self):
         pass
 
-    def games_played(self, new_game=None):
+    def games_played(self):
         pass
 
     def played_game(self, game):
